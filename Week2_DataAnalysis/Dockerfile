@@ -29,7 +29,6 @@ RUN apt-get -y install zip
 RUN unzip Snap-4.1.zip
 WORKDIR /src/Snap-4.1
 RUN make
-RUN make test
 
 WORKDIR /home/jovyan/work
 
