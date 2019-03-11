@@ -3,7 +3,7 @@
 Run this docker image
 
 ```
-docker run -it -p 8888:8888 --name snappy -v %cd%:/home/jovyan/work jupyter/datascience-notebook
+docker run --rm -it -p 8888:8888 --name snappy -v %cd%:/home/jovyan/work jupyter/datascience-notebook
 ```
 
 This will display the notebook token such as:
