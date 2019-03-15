@@ -30,5 +30,8 @@ RUN unzip Snap-4.1.zip
 WORKDIR /src/Snap-4.1
 RUN make
 
+# Install python packages
+RUN /usr/bin/python2.7 -m pip install pandas
+
 WORKDIR /home/jovyan/work
 
