@@ -6,8 +6,7 @@ namespace Neptune.Model
 {
     public sealed class Edge
     {
-        private static int _instanceCounter = 0;
-        public string EdgeId { get; set; } = $"e{++_instanceCounter}";
+        public string EdgeId { get; set; } = Convert.ToString(Guid.NewGuid());
 
         public string From { get; set; }
 

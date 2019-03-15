@@ -1,4 +1,5 @@
 ﻿using Neptune.Model;
+using Neptune.Writers;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,21 +13,29 @@ namespace Neptune
 
         static void Main(string[] args)
         {
+            var networks = new List<EgoNetwork>();
             // For each feature set...
             foreach (var featureNameFile in basePath.GetFiles("*.featnames"))
             {
                 // Determine the ego node name and features...
                 var egoNode = Path.GetFileNameWithoutExtension(featureNameFile.Name);
-                var features = GetFeatureNames(featureNameFile);
-
-                // Load the edge information...
                 var edgeFile = new FileInfo(Path.ChangeExtension(featureNameFile.FullName, ".feat"));
-                var edges = GetEdges(egoNode, edgeFile, features);
-
-                // Determine the ego features
                 var egoFile = new FileInfo(Path.ChangeExtension(featureNameFile.FullName, ".egofeat"));
-                var egoFeatures = GetEgoFeatures(egoFile, features);
+
+                var features = GetFeatureNames(featureNameFile);
+                networks.Add(new EgoNetwork
+                {
+                    EgoNodeName = Path.GetFileNameWithoutExtension(featureNameFile.Name),
+                    NetworkFeatures = features,
+                    Edges = GetEdges(egoNode, edgeFile, features),
+                    EgoFeatures = GetEgoFeatures(egoFile, features)
+                });
             }
+
+            var writer = new GremlinWriter(
+                basePath.CreateSubdirectory(nameof(GremlinWriter)));
+
+            writer.Write(networks, "facebook");
         }
 
         static List<string> GetFeatureNames(FileInfo file)
