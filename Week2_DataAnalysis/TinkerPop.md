@@ -53,3 +53,37 @@ gremlin> subgraph.io(graphml()).writeGraph('/tmp/node-0.graphml')
 - Marvel http://syntagmatic.github.io/exposedata/marvel/
 
 - Facebook http://snap.stanford.edu/data/ego-Facebook.html
+
+## Running Grephi on big box
+
+- Create EC2 SPot instance
+
+- Install Java https://www.java.com/en/download/windows-64bit.jsp
+
+- Install Grephi
+
+## How DO I reload the graph?
+
+```
+docker cp Facebook.graphml tinker:/tmp
+```
+
+```
+docker run -it tinkerpop/gremlin-console
+
+Mar 16, 2019 5:54:30 AM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+
+         \,,,/
+         (o o)
+-----oOOo-(3)-oOOo-----
+plugin activated: tinkerpop.server
+plugin activated: tinkerpop.utilities
+plugin activated: tinkerpop.tinkergraph
+gremlin> graph = TinkerGraph.open();
+==>tinkergraph[vertices:0 edges:0]
+gremlin> graph.io(graphml()).readGraph('/tmp/Facebook.graphml');
+==>null
+gremlin> graph
+==>tinkergraph[vertices:4031 edges:39368]
+```
