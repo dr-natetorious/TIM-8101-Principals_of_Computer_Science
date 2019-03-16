@@ -19,18 +19,31 @@ namespace Neptune.Writers
 
         public void Write(List<EgoNetwork> networks, string name)
         {
-            var outFile = Path.Combine(outputDirectory.FullName, name + ".gremlin");
-            using (var sw = new StreamWriter(File.OpenWrite(outFile), Encoding.UTF8))
+            var outFile = new FileInfo(
+                Path.Combine(outputDirectory.FullName, name + ".gremlin"));
+            if (outFile.Exists)
+            {
+                outFile.Delete();
+            }
+
+            using (var sw = new StreamWriter(outFile.OpenWrite(), Encoding.UTF8))
             {
                 sw.WriteLine("graph = TinkerGraph.open()");
                 sw.WriteLine("g = graph.traversal()");
 
                 // Create all of the verticies...
+                foreach (var vertice in EgoNetwork.GetAllVertices(networks))
+                {
+                    sw.WriteLine(
+                        $"v_{vertice} = graph.addVertex(id, '{vertice}');");
+                }
+                sw.WriteLine();
+
+                // Add Ego Properties
                 foreach (var network in networks)
                 {
-                    sw.WriteLine($"// Add Ego: {network.EgoNodeName}....");
                     sw.WriteLine(
-                        $@"ego_{network.EgoNodeName} = graph.addVertex(id, '{network.EgoNodeName}');");
+                        $@"ego_{network.EgoNodeName} = v_{network.EgoNodeName};");
 
                     foreach (var feature in network.EgoFeatures)
                     {
@@ -40,23 +53,12 @@ namespace Neptune.Writers
                 }
 
                 // Create the graph...
-                foreach (var network in networks)
+                foreach (var edge in networks.SelectMany(n => n.Edges))
                 {
-                    foreach (var edge in network.Edges)
-                    {
-                        sw.WriteLine(
-                            $@"
-                            // edge: {edge.EdgeId}
-                            v_from = graph.vertices('{edge.From}');
-                            if (v_from == null) {{ v_from = graph.addVertex(id, '{edge.From}'); }}
-                            v_to = g.vertices('{edge.To}');
-                            if (v_to == null) {{ v_to = graph.addVertex(id, '{edge.From}'); }}
-                            
-                            e = v_from.addEdge('{edge.Label}', v_to, id, '{edge.EdgeId}', 'weight', {edge.Weight});
-                            "
-                            .Replace("\t", string.Empty)
-                            .Replace("\r\n", "\n"));
-                    }
+                    sw.WriteLine(
+                        $"e_{edge.EdgeId} = ");
+                    sw.WriteLine(
+                        $"    v_{edge.From}.addEdge('{edge.Label}', v_{edge.To}, id, '{edge.EdgeId}', 'weight', {edge.Weight});");
                 }
             }
         }

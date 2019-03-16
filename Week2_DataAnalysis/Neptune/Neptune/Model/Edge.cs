@@ -6,7 +6,7 @@ namespace Neptune.Model
 {
     public sealed class Edge
     {
-        public string EdgeId { get; set; } = Convert.ToString(Guid.NewGuid());
+        public string EdgeId { get; set; } = Guid.NewGuid().ToString("n");
 
         public string From { get; set; }
 

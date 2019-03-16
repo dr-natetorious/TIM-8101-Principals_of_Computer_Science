@@ -8,7 +8,7 @@ A [docker image](https://hub.docker.com/r/tinkerpop/gremlin-server) can be launc
 
 ```
 docker run -it -p 8182:8182 tinkerpop/gremlin-server
-docker run -it docker pull tinkerpop/gremlin-console
+docker run -it tinkerpop/gremlin-console
 ```
 
 ## How do I build the graph?
@@ -23,3 +23,17 @@ v1 = g.addV('taco')
 same = g.V().hasLabel('taco')
 also_same = g.V(v1)
 ```
+
+## How do I visualize my graphs?
+
+The recommended program for TinkerPop is [Gephi](https://gephi.org/users/download/)
+
+Instructions for sending to Gephi can be [found here](https://groups.google.com/forum/#!topic/gremlin-users/pT87rPvty0g).
+
+That doesnt seem to work on Windows...
+
+https://github.com/tinkerpop/blueprints/wiki/graphml-reader-and-writer-library
+
+This is how you export to GraphML: graph.io(graphml()).writeGraph('/tmp/asdf.xml')
+
+Then the file can be imported into Gephi.

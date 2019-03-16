@@ -50,7 +50,7 @@ namespace Neptune
                         .Replace(";", "_")
                         .Replace(" ", string.Empty);
 
-                list.Add($"{feature}:boolean");
+                list.Add($"{feature}");
             }
 
             return list;
