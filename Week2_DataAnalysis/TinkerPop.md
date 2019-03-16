@@ -47,3 +47,9 @@ gremlin> subgraph = g.V(v_0).outE().subgraph('sg').cap('sg').next()
 ==>tinkergraph[vertices:348 edges:3319]
 gremlin> subgraph.io(graphml()).writeGraph('/tmp/node-0.graphml')
 ```
+
+## Where did the data sets come from?
+
+- Marvel http://syntagmatic.github.io/exposedata/marvel/
+
+- Facebook http://snap.stanford.edu/data/ego-Facebook.html
