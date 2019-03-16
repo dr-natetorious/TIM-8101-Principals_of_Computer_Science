@@ -34,6 +34,16 @@ That doesnt seem to work on Windows...
 
 https://github.com/tinkerpop/blueprints/wiki/graphml-reader-and-writer-library
 
-This is how you export to GraphML: graph.io(graphml()).writeGraph('/tmp/asdf.xml')
+This is how you export to GraphML: graph.io(graphml()).writeGraph('/tmp/Facebook.graphml')
 
 Then the file can be imported into Gephi.
+
+To export a smaller chunk of the graph use:
+
+```
+gremlin> g.V(v_0).outE().subgraph('sg').cap('sg').next()
+==>tinkergraph[vertices:348 edges:3319]
+gremlin> subgraph = g.V(v_0).outE().subgraph('sg').cap('sg').next()
+==>tinkergraph[vertices:348 edges:3319]
+gremlin> subgraph.io(graphml()).writeGraph('/tmp/node-0.graphml')
+```
