@@ -60,6 +60,8 @@ gremlin> subgraph.io(graphml()).writeGraph('/tmp/node-0.graphml')
 
 - Install Java https://www.java.com/en/download/windows-64bit.jsp
 
+- Install OpenGL for NVidia Telsa http://us.download.nvidia.com/Windows/Quadro_Certified/398.75/398.75-tesla-desktop-win10-64bit-international.exe
+
 - Install Grephi
 
 ## How DO I reload the graph?
