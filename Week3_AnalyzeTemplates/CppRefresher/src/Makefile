@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-I.
-DEPS= hello.h
-OBJ= hello.o
+DEPS= hello.h taco.h
+OBJ= hello.o taco.o
 
 %.o : %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
