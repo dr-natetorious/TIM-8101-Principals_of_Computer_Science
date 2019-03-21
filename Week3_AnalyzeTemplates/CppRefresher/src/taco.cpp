@@ -2,6 +2,11 @@
 #include "taco.h"
 using namespace std;
 
+Taco::Taco()
+{
+	this->quantity = 0;
+}
+
 void Taco::set_quantity(long quantity)
 {
     this->quantity =quantity;

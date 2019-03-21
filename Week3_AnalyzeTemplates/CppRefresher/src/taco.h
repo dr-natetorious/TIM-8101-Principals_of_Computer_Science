@@ -12,4 +12,5 @@ class Taco {
 
         void set_meat(string value);
         string get_meat() const;
+		Taco();
 };

@@ -4,6 +4,7 @@
 #include "list.h"
 
 using namespace std;
+using namespace Nate;
 
 void say_taco()
 {
@@ -13,6 +14,11 @@ void say_taco()
 void pointer_fun()
 {
 	int* x = (int*)malloc(sizeof(int)*20);
+	if (x == 0)
+	{
+		return;
+	}
+
 	for (int i = 0; i < 20; i++)
 	{
 		x[i] = i;
