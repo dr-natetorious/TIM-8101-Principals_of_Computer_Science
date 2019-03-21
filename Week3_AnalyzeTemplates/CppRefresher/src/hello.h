@@ -1,6 +1,2 @@
-#ifdef hello_h
-#define hello_h
-
 void say_taco();
-
-#endif
+void do_list_stuff();
