@@ -213,10 +213,10 @@ Even when the code is virtually identical the compiler does not appear to make a
 1. typed parameter guard: Ensure the cast is valid.
 2. untyped execution code
 
-This is a screen shot of `List<int>.add_Item()`:
+#### This is a screen shot of `List<int>.add_Item()`:
 
 ![list_add_Item_int.png](list_add_Item_int.png)
 
-This is a screen shot of `List<Taco>.add_Item()`:
+#### This is a screen shot of `List<Taco>.add_Item()`:
 
 ![list_add_Item_taco.png](list_add_Item_taco.png)
