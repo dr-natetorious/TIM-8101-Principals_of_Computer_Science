@@ -9,7 +9,7 @@
 namespace Nate
 {
 	template <class T>
-	class List {
+	class __declspec(dllexport) List {
 	private:
 		T* items;
 		int capacity;

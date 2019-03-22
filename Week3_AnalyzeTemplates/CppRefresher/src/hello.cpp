@@ -27,6 +27,14 @@ void pointer_fun()
 	}
 }
 
+#define min(x,y) x < y ? x : y
+
+void fishbob()
+{
+	int test_1 = min(12, 14);
+	int test_2 = min(min(12, 14), 15);
+}
+
 void pointer_fun2()
 {
 	int my_var = 1234;

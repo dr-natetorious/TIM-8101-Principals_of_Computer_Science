@@ -1,5 +1,5 @@
 #pragma once
-class Program
+class __declspec(dllexport) Program
 {
 public:
 	Program();
