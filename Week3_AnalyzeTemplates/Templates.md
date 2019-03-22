@@ -213,6 +213,24 @@ Even when the code is virtually identical the compiler does not appear to make a
 1. typed parameter guard: Ensure the cast is valid.
 2. untyped execution code
 
+This is the code that makes up the `add_Item()` method:
+
+```c++
+    template <class T>
+	T* List<T>::CreateBuffer(int size)
+	{
+		// Initialize the items[]
+		T* buffer = new T[size];
+
+		if (buffer == 0)
+		{
+			throw new runtime_error("out of memory");
+		}
+
+		return buffer;
+	}
+```
+
 #### This is a screen shot of `List<int>.add_Item()`:
 
 ![list_add_Item_int.png](list_add_Item_int.png)
