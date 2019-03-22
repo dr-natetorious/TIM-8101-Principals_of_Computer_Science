@@ -4,9 +4,9 @@ This week has focused on trends in code generation and a brief refresher on C++.
 
 ## What notes exist from this week?
 
-- [Makefiles.md]: Notes from setting up Make
-- [Templates.md]: Notes from using C++ templates
-- [Pointers.md]: Notes from C pointer guide
+- [Makefiles.md](Makefiles.md): Notes from setting up Make
+- [Templates.md](Templates.md): Notes from using C++ templates
+- [Pointers.md](Pointers.md): Notes from C pointer guide
 
 ## What is the Core Assignment?
 
