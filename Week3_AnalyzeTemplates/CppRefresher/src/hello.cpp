@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "taco.h"
 #include "list.h"
+#include "Program.h"
 
 using namespace std;
 using namespace Nate;
@@ -26,14 +27,14 @@ void pointer_fun()
 	}
 }
 
-void do_list_stuff()
+void pointer_fun2()
 {
-	List list(7);
-	for (int i = 0; i < 100; i++)
-	{
-		list.add_Item(i);
-		printf("item[%d] = %d\n", i, list.get_Item(i));
-	}
+	int my_var = 1234;
+	int* pVar = &my_var;
+
+	printf("Variable Addresses: &my_var=%p \t pVar=%p\n", &my_var, pVar);
+	printf("            Values: my_var=%d \t pVar=%d\n", my_var, pVar);
+	printf("      Dereferenced:          \t pVar=%d\n", *pVar);
 }
 
 int main(int argc, char**argv)
@@ -49,8 +50,10 @@ int main(int argc, char**argv)
 
 	// do pointer stuff
 	pointer_fun();
+	pointer_fun2();
 
-	// test list
-	do_list_stuff();
+	// Run Program.
+	Program program;
+	program.Run();
 }
 
