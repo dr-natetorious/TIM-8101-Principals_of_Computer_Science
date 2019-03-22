@@ -11,3 +11,9 @@ This tutorial was useful crash course. There are a lot of macros which makes sen
 http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
 
 You see similar effects with `.props` and `.targets` in msbuild based environments. Luckily this appears to be a lot of copy/paste.
+
+## Where is the make file from this experiment?
+
+The file can be found at [CppReferesher/Makefile](CppRefresher/Makefile).
+
+This is a partial implementation due to switching to Visual Studio on the second day.
