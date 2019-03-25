@@ -110,6 +110,7 @@
     <ClCompile Include="taco.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Number.h" />
     <ClInclude Include="hello.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="Program.h" />
