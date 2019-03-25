@@ -1,7 +1,7 @@
 #pragma once
-template <typename N, int vale>
+template <typename N>
 class Number
 {
 public:
-	N get_Value() { return value; }
+	int get_Value() { return N; }
 };

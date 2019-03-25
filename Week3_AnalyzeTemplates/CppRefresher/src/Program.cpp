@@ -15,11 +15,6 @@ Program::~Program()
 void Program::Run()
 {
 	printf("Start App...\n");
-
-	Number<7> num;
-	printf("num=%d\n", num.get_Value());
-
-
 	Nate::List<Taco> list(10);
 	Nate::List<int> ints(10);
 	Nate::List<double> doubles(10);
