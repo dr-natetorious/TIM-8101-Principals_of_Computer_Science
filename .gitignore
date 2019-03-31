@@ -12,3 +12,5 @@
 /Week3_AnalyzeTemplates/CppRefresher/.vs
 /Week3_AnalyzeTemplates/CppRefresher/src/.vs/CppRefresher/v16
 /Week3_AnalyzeTemplates/CppRefresher/src/Debug
+**/~*.docx
+**/~*.tmp
