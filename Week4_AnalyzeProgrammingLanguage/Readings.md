@@ -25,3 +25,8 @@ https://github.com/dotnet/llilc
 # ROPSentory
 
 https://www-sciencedirect-com.proxy1.ncu.edu/science/article/pii/S0167404817302481
+
+# C++ and Programming Information
+
+- https://ebookcentral.proquest.com/lib/ncent-ebooks/reader.action?docID=437715
+- https://ebookcentral.proquest.com/lib/ncent-ebooks/detail.action?docID=649018#
