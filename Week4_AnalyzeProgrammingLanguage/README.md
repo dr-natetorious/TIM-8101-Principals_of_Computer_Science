@@ -16,6 +16,18 @@ Afterwards standardized tools exist to inject optimiziers and mutators into the 
 
 There are parallels to this model and the new efforts in Microsoft's Rosyln compiler.
 
+### Compilation as a recursive process
+
+When I think of compiling code I picture something along the lines of:
+- dotnet build foo.sln
+- gcc bar.c -o cheese
+
+However it is actually more maintainable for larger scale systems to have multiple passes.
+
+Perhaps the first pass expands out Domain Specific Langauge (DSL), then the second generates typelibs, and finally the actual code is compiled.
+
+Each of these investments into the build system ultimately pays off by reducing developer time.
+
 ### Language Design
 
 The [Programming Language Pragmatics](https://ebookcentral.proquest.com/lib/ncent-ebooks/detail.action?docID=649018#) was very complete. 
