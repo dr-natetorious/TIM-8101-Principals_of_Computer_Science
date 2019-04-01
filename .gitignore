@@ -14,3 +14,9 @@
 /Week3_AnalyzeTemplates/CppRefresher/src/Debug
 **/~*.docx
 **/~*.tmp
+**/a.out
+**/klee-last
+**/klee-out-*
+**/Klee/tutorials/*.bc
+**/Klee/tutorials/get_sign
+**/.vscode
