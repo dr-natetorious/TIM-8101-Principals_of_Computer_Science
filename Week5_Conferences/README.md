@@ -6,18 +6,38 @@ The top referenced conferences are: ICSE, MSR, FSE, ASE, ISSTA.
 
 The [International Conference on Software Engineering](http://www.icse-conferences.org/) focuses on software engineering trends.
 
+### What are the available tracks?
+
+Plenary Sessions | Technical Track | Journal-First Papers | Software Engineering in Practice | Software Engineering Education and Training  | Software Engineering in Society | New Ideas and Emerging Results | Demonstrations | ACM Student Research Competition | Technical Briefings | Industry Program | Artifact Evaluation | Posters | Workshops | Doctoral Symposium | New Faculty Symposium | Software Engineering Mentoring Workshop | Co-Located Events | ROSE Festival | Most Influential Paper ICSE N-10 | Tutorials | Student Volunteers | Submitting to ICSE2019: Q&A | Resources | Paper Presentations
+
 ## What is MSR ?
 
 The [Mining Software Repositories](http://www.msrconf.org/) field analyzes the rich data available in software repositories.
 
+### What are the available tracks?
+
+Technical Papers | Mining Challenge | Data Showcase | Keynote | Education | Mining Software Repositories Awards | MIP Award | FOSS Award | Plenary | Paper Presentations
+
 ## What is FSE ?
 
-The [Fast Software Encryption](https://fse.iacr.org/2019/) focuses on fast and secure primitives for symmetric cryptography.
+The [European Software Engineering Conference and Symposium on the Foundations of Software Engineering](https://conf.researchr.org/home/fse-2018) is available alterate years with the [Foundation of Software Engineering](http://www.wikicfp.com/cfp/program?id=1093)
+
+### What are the available tracks?
+
+Research Papers | Social | Journal-First | New Ideas and Emerging Results | Demonstrations | Industry | Workshops | A-TEST | EnSEmble | WASPI | SWAN | NL4SE | Artifacts | Doctorial Symposium | Student Research Competition | ESEC/FSE 2018 Student Volunteers | Keynotes | Faculty Mentorship Roundtables
 
 ## What is ASE ?
 
 The [Automated Software Engineering](https://2019.ase-conferences.org/) focuses on test automation for large scale software.
 
+### What are the available tracks?
+
+Research Papers | Journal First Presentations | Demonstrations | Industry Showcase | Doctoral Symposium | Student Research Competition | Late Breaking Results | Workshop Proposals
+
 ## What is ISSTA ?
 
 The [International Symposium on Software Testing and Analysis](https://conf.researchr.org/home/issta-2019) focuses on software testing practices.
+
+### What are the available tracks?
+
+ISSTA 2019 Technical Papers | TAV-CPS/IoT 2019 | ISSTA 2019 Doctoral Symposium  | Artifact Evaluation | Tool Demonstration | Workshops | Student Volunteers  | Summer School
