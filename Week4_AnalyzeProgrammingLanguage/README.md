@@ -4,6 +4,14 @@ The core focus of this week has been on programming languages and how they are u
 
 A deep dive into the compiler technologies was also performed.
 
+
+## What were the assignments for the week?
+
+The [Assignment.md](Assignment.md) provides the broad description.
+
+- [Part A: The Compliation Process](Week4_UnderstandingCpp_PartA.docx)
+- [Part B: Review Research using C++](Week4_Cpp_InResearch_PartB.docx)
+
 ## What did you learn?
 
 ### C/C++ as a build target
@@ -34,10 +42,3 @@ The [Programming Language Pragmatics](https://ebookcentral.proquest.com/lib/ncen
 
 With each of the concepts it gave credit to the originating languages and described how others continued the effort.
 
-
-## What were the assignments for the week?
-
-The [Assignment.md](Assignment.md) provides the broad description.
-
-- [Part A: The Compliation Process](Week4_UnderstandingCpp_PartA.docx)
-- [Part B: Review Research using C++](Week4_Cpp_InResearch_PartB.docx)
