@@ -4,11 +4,7 @@ The top referenced conferences are: ICSE, MSR, FSE, ASE, ISSTA.
 
 ## What is ICSE ?
 
-The [International Conference on Software Engineering](http://www.icse-conferences.org/) focuses on software engineering trends.
-
-### What are the available tracks?
-
-Plenary Sessions | Technical Track | Journal-First Papers | Software Engineering in Practice | Software Engineering Education and Training  | Software Engineering in Society | New Ideas and Emerging Results | Demonstrations | ACM Student Research Competition | Technical Briefings | Industry Program | Artifact Evaluation | Posters | Workshops | Doctoral Symposium | New Faculty Symposium | Software Engineering Mentoring Workshop | Co-Located Events | ROSE Festival | Most Influential Paper ICSE N-10 | Tutorials | Student Volunteers | Submitting to ICSE2019: Q&A | Resources | Paper Presentations
+The [International Conference on Software Engineering](ICSE) focuses on software engineering trends.
 
 ## What is MSR ?
 
