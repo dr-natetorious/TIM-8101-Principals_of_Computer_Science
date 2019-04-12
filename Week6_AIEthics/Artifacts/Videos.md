@@ -11,6 +11,7 @@ Dude #1
     - Corporations need to drive the conversation
     - Bad: Use for weapons, law enforcement, social credit, privacy, and discrimination
     - Regulation is hard cause dual uses
+    - Specific actions
 
 
 # The Future of Artifical Intelligence
