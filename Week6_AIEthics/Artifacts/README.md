@@ -28,28 +28,30 @@ They discuss the duality of AI technology being both helpful and harmful in the 
 The [Journal of Experimental Social Psychology](DoingGood_vs_AvoidingBad.pdf) explores why actors choose to be ethical. They frame the conversation in terms of prosociality.
 
 They propose hypothesis:
+
     - Desire to reach equality everywhere
     - Giving with desire of reciprocity; eg. tip the bartender for better drinks
     - Gaining utility by doing right; eg. makes you feel positive
-    - It is easier to be moral and avoid the consequences 
+    - It is easier to be moral and avoid the consequences
 
 These are framed as positions within the 2x2 matrix:
-    - TOG frame: Give – Do Good 
-    - TOG frame: Give – Avoid Bad 
-    - TOG frame: Equalize – Do Good 
+
+    - TOG frame: Give – Do Good
+    - TOG frame: Give – Avoid Bad
+    - TOG frame: Equalize – Do Good
     - TOG frame: Equalize – Avoid Bad
 
 ## Ethical Issues of AI in Medicine
 
 The [California Western Law Review](EthicalIssues_AI_Medicine.pdf) explores practical applications of AI such as deep learning on image diagnostics.
 
-### What is the content outline?
-   
+### What is the content outline
+
     - Reliability of prediction
-        - Requires big data 
+        - Requires big data
         - Challenges with overfitting
         - Missing data points cause incorrect guesses
-    
+
     - Lack of transparency and evidence
         - Hidden layers of DNN are black box
 
@@ -63,7 +65,7 @@ The [California Western Law Review](EthicalIssues_AI_Medicine.pdf) explores prac
         - Need to justify that expense
         - AI surgery tasks have a 3.7% failure rate, should they not be used until 0%
 
-### Any additional notes?
+### Any additional notes
 
 AI is required for medicine as there is too much data for the doctor to keep track of. It is compounded by the sensors and demographics which make certain interactions or or less relevant.
 
@@ -93,7 +95,7 @@ Limitations: The article is based on reasoning not emotions, which adds another 
 
 The [Communications of the ACM](EuropeanPerspective_ResponsibleComputing.pdf) wrote about the European Commission's [new guidelines](https://ec.europa.eu/digital-single-market/en/news/ethics-guidelines-trustworthy-ai) on responsible AI systems.
 
-### What do the recommended guidelines touch?
+### What do the recommended guidelines touch
 
 The guidelines are [defined for categories](https://www.engadget.com/2019/04/08/eu-ai-ethics-guidelines/):
 
@@ -106,15 +108,15 @@ The guidelines are [defined for categories](https://www.engadget.com/2019/04/08/
     - Transparency: The traceability of AI systems should be ensured.
 
     - Diversity, non-discrimination and fairness: AI systems should consider the whole range of human abilities, skills and requirements, and ensure accessibility.
-    
+
     - Societal and environmental well-being: AI systems should be used to enhance positive social change and enhance sustainability and ecological responsibility.
 
     - Accountability: Mechanisms should be put in place to ensure responsibility and accountability for AI systems and their outcomes.
 
 "Europe is at the forefront of the regulation and reflections on these issues though its institutional bodies (p84)."
 
-### What is GDPR ?
+### What is GDPR
 
-The General Data Protection Regulation is an effort to give individuals control over their personal data and to provide a unifying regulation within the EU for international business. 
+The General Data Protection Regulation is an effort to give individuals control over their personal data and to provide a unifying regulation within the EU for international business.
 
 The first effort was aimed at privacy and offering features such as "right to be forgotten." This is the second phase which is aimed focused on autonomous systems -- anything that can derive context without humans.
