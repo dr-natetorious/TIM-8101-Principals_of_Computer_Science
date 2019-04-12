@@ -95,25 +95,25 @@ Limitations: The article is based on reasoning not emotions, which adds another 
 
 The [Communications of the ACM](EuropeanPerspective_ResponsibleComputing.pdf) wrote about the European Commission's [new guidelines](https://ec.europa.eu/digital-single-market/en/news/ethics-guidelines-trustworthy-ai) on responsible AI systems.
 
-### What do the recommended guidelines touch
-
-The guidelines are [defined for categories](https://www.engadget.com/2019/04/08/eu-ai-ethics-guidelines/):
-
-    - Human agency and oversight: AI systems should enable equitable societies by supporting human agency and fundamental rights, and not decrease, limit or misguide human autonomy.
-
-    - Robustness and safety: Trustworthy AI requires algorithms to be secure, reliable and robust enough to deal with errors or inconsistencies during all life cycle phases of AI systems.
-
-    - Privacy and data governance: Citizens should have full control over their own data, while data concerning them will not be used to harm or discriminate against them.
-
-    - Transparency: The traceability of AI systems should be ensured.
-
-    - Diversity, non-discrimination and fairness: AI systems should consider the whole range of human abilities, skills and requirements, and ensure accessibility.
-
-    - Societal and environmental well-being: AI systems should be used to enhance positive social change and enhance sustainability and ecological responsibility.
-
-    - Accountability: Mechanisms should be put in place to ensure responsibility and accountability for AI systems and their outcomes.
-
 "Europe is at the forefront of the regulation and reflections on these issues though its institutional bodies (p84)."
+
+### What are the recommended guidelines
+
+_Human agency and oversight_: AI systems should enable equitable societies by supporting human agency and fundamental rights, and not decrease, limit or misguide human autonomy.
+
+_Robustness and safety_: Trustworthy AI requires algorithms to be secure, reliable and robust enough to deal with errors or inconsistencies during all life cycle phases of AI systems.
+
+_Privacy and data governance_: Citizens should have full control over their own data, while data concerning them will not be used to harm or discriminate against them.
+
+_Transparency_: The traceability of AI systems should be ensured.
+
+_Diversity, non-discrimination and fairness_: AI systems should consider the whole range of human abilities, skills and requirements, and ensure accessibility.
+
+_Societal and environmental well-being_: AI systems should be used to enhance positive social change and enhance sustainability and ecological responsibility.
+
+_Accountability_: Mechanisms should be put in place to ensure responsibility and accountability for AI systems and their outcomes.
+
+This is quoted directly from [engadget](https://www.engadget.com/2019/04/08/eu-ai-ethics-guidelines/).
 
 ### What is GDPR
 
