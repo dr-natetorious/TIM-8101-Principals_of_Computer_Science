@@ -2,6 +2,23 @@
 
 ## General Cloud Design Principals
 
+### Transformation from Identity Stone Age to Digital Identity
+
+The [article](IdentityEnhancement.pdf) describes the evolution of online identity into the modern "Identity as a Service" paradigm.
+
+The author details the legacy universe of multiple forms of identification such as passwords and social security numbers, and the need to transition into OpenID based models. With an OpenID an identity can be provided along with a series of claims that are relevant to an "identity zone".
+
+For example Bob has a certain persona with their friends but that same persona might not fit with their ebay account. There are clearly overlaps but different details will have no contextual meaning.
+
+They go on to describe the need for federated identities as a means of maintaining shared identity between services. Contoso.com does not need to risk an insecure disclosure of credentials, if they rely on a third party such as Azure Activity Directory to the actual passwords storage.
+
+Transitioning to a federated model has four phases:
+
+1. Cross organizational trusts : Multiple domain controllers trust each other
+2. Open id foundation (OIDF) : Tokens can be given to agree on shared identity
+3. Hybrid Cloud trusts : Tokens can be issued for cross environments (disjoined SSO scenarios)
+4. Open identity exchange (OIX) : Centralized identity, policy, and Level of Assurance (LoA)
+
 ### Tackling Cloud Security Issues and Forensics Model
 
 Modern medical facilities need to archive enormous amounts of data in the form of:
