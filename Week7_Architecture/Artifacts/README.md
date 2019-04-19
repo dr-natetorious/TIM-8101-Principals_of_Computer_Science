@@ -51,6 +51,54 @@ Another challenge with eHealth is coming up with a availability for all patients
 
 The author goes on to decribe "HealthNets" (health networks) -- as not needing to be overly ambishious in scope but extensible, so that features and integrations can be added over time. Get the tooling out there and people will use it. They make a comparison to WhatsApp which was simple and available allowing it to grow to 1.6 billion messages per day.
 
+### Analysis and Typology of Global eHealth Platforms – A Survey on Five Continents
+
+The [article](Global_eHealth.pdf) gives an overview of the empirical state of eHealth across the different continents, and attempts to losely categorize their maturity levels.
+
+_Patient Workflow Support Systems_: South Africa and Pakistan have very simple but effective eHealth systems. Focuses on physically scheduling people and resources through the health care system.
+
+_Basic EHR-like systems_: Belize uses a system that supports both patient workflow and national identity of centralized health records. They also included branch office replication to handle unreliable network connectivity. It doesnt do a lot but the little it does, it does well.
+
+_Comprehensive, Complex Systems and Platforms_: Brazil and Estonia started simple and then added complexity in stages, this allowed them to get it right before adding more challenges. They upgraded in phases
+
+- Patient Flow
+- Data capture and billing
+- Medication dispensing
+- Referal and Counter Referal to Specalist
+
+_National Framework Systems and Common Components_: Canada and Austraila use common integration requirements to connect many decentralized medical professionals into a larger shared system. The larger system focuses on the brokerage of information not so much on the storage of individual records. That is delegated to hospitals and insurance carriers.
+
+Key Failures:
+
+- Austriala's firt attempt was 128m over 4 year to identify the requirements of a national system. Insufficient committment resulted in no little follow through.
+- Next their Personally Controlled eHealth Record system was given 467m -- but was poorly marketed resulting in under 700k users
+- Canada Health Infoway Inc is a not for profit that has received 2.1b government funds -- they have invested in 380 different projects which are slowly converging
+
+__International core Patient Data Exchange Servies_: Europe has attempted to create a record exchange that spans borders, languages, and even alphabets. The EC organized the kickoff from 2008-14 and has since delegated management to member nations.
+
+### Centralized Healthcare Cyber-Physical System’s Architecture Development
+
+The [article](HealthCare_CyberPhysical.pdf) describes the need for bluring the edge between physical and cyber health care systems. Physical health care are sensors, monitors, and different tests. Cyber refers to the algorithms and analytics that enumerate that data and look for patterns.
+
+Their argument is that by combining these worlds together it becomes easier to ask "the right questions, with the right data at the right time."
+
+This requires the design of new protocols for machine to machine communication, which will come from the availability of large sensor networks. This ties back with the week 1 discussions of 5G wireless and its associated implications.
+
+They state that it will require involvement from different professional groups before reaching a utopian outcome. At that stage, far into the future, autonomous surgerys could be the norm -- but would first require many rounds of:
+
+- Model
+- Design
+- Analysis
+
+They envision the architecture of this system will be four layers:
+
+- Data Analysis
+- Intelligent Services
+- Communication
+- Physical Layer
+
+![CyberPhysical.png](CyberPhysical.png)
+
 ## Security, Privacy, and Reliability
 
 ### Block-based Access Control for Blockchain EMR
