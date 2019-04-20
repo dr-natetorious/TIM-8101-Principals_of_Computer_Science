@@ -54,9 +54,21 @@ Services within the cloud are also exposed to the Internet and must be addressed
 
 Cloud Services must be designed to have Quality of Service (QoS) characteristics: Availability, Reliability, Latency, and Response Time.
 
+### Internet cloud security: The illusion of inclusion
+
+The [article](IllusionOfInclusion.pdf) describes cloud adoption challenges such as training and security concerns.
+
+They make an argument that putting systems in the cloud does not magically make them more or less secure. Attack surface needs to be reduced through training and configuration. Organizations also need a business continuity / disaster recovery plan.
+
 ## Components and Implementation Considerations of eHealth Care
 
-### eHealth is health care transformation, not “an IT project
+### EMR vs EHR - What is the Difference
+
+According to [HealthIT](https://www.healthit.gov/buzz-blog/electronic-health-and-medical-records/emr-vs-ehr-difference) electronic medical records are digital copies of medical files. Electronic Health Records is a total picture of the patient.
+
+To create an EMR system one needs encryption and storage. For an EHR one needs to leverage EMR data for analytical and alerting scenarios.
+
+### eHealth is health care transformation, not "an IT project"
 
 The article discusses [a different mindset needed to build eHealth](eHealthBenefits.pdf) systems. The author states that:
 
@@ -179,4 +191,52 @@ Having these components provided a framework to begin studying why maternal deat
 
 ![Ghana eHealth Model](Ghana_eHealthModel.png)
 
+### Modelling the utilization of cloud health information systems in the Iraqi public healthcare sector
+
+The [Iraqi eHealthCare](Iraqi_Healthcare.pdf) sector has been suffering from health records management issues from the perspectives of low information technology integrity and data complexity. Their study proposed a model by defining the critical success factors influencing physicians confirmation and behavioral control toward utilizing cloud health information systems in Iraqi hospitals.
+
+The authors found that healthcare professionals resistance was the result of regret avoidance, inertia, perceived value, switching costs, and perceived threat. In addition, the researchers found that attitude, subjective norm, and perceived behavior control affected professionals intention to use the health cloud.
+
+In the Taiwanese hospital industry they found that the five most critical factors were data security, perceived technical competence, cost, top manager support, and complexity.
+
+RQ1: What are the effects of system integrity factors in terms of compatibility, complexity, security, and privacy on physicians confirmation and behavioral control to utilize cloud computing services in the Iraqi healthcare sector?
+
+### Barriers to using eHealth data for clinical performance feedback in Malawi: A case study
+
+Sub-optimal performance of healthcare providers in low-income countries is a critical and persistent global problem. The use of electronic health information technology (eHealth) in these settings is creating large-scale opportunities to automate performance measurement and provision of feedback to individual healthcare providers, to support clinical learning and behavior change [article](Malawi_Barriers_to_ehealth.pdf).
+
+**Summary points**
+What was already known on this topic:
+
+- Adoption of eHealth in low-income countries is creating large-scale opportunities to use data for clinical performance feedback.
+- Data quality is a significant barrier to the secondary use of clinical data in low-resource settings.
+
+What this study has added to our knowledge:
+
+- Key barriers to using eHealth for individualized performance feedback in Malawi are provider rotations, disruptions to care processes, user acceptance of eHealth, and performance indicator lifespan.
+- Technology designed for eHealth-based audit and feedback in low-resource settings could accommodate these barriers using routine data quality assessment.
+- Understanding low-resource clinical settings as complex adaptive systems (CASs) may enable designers of technology to effectively model change processes for audit and feedback.
+
 ## Applications within eHealth
+
+### Medshare: A Novel Hybrid Cloud for Medical Resource Sharing Among Autonomous Healthcare Providers
+
+Legacy electronic health record systems were not developed with the level of connectivity expected from them nowadays. Therefore, interoperability weakness inherent in the legacy systems can result in poor patient care and waste of financial resources. Simultaneously, healthcare providers are not yet ready to dispose of them. Large hospitals are also less likely to share their data with external care providers due to economic and political reasons [article](MedShare_HybridCloud.pdf).
+
+The proposed system architecture and its implementation is based upon:
+
+1. custom data extractors to extract legacy medical data from the three hemodialysis centers under consideration
+
+2. negotiated and converted to a common data model in each of the private cloud of a provider
+
+3. indexed patient information using the HashMap technique into the public cloud that operates on private clouds, called a hybrid cloud
+
+4. a set of services and tools installed as a coherent environment to exchange information smoothly.
+
+### Mobile Cloud Computing For Emergency Healthcare Model:Framework
+
+The [article](MobileCloud_for_Emergencies.pdf) describes a mobile application for getting emergency assistance or scheduling medical appointments.
+
+Their implementation uses a centralized database in the cloud and then a mobile notification system.
+
+### An integrated holistic model for an eHealth system: A national implementation approach and a new cloud-based security model
