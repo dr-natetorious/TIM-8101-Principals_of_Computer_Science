@@ -2,6 +2,12 @@
 
 ## General Cloud Design Principals
 
+### Efficient Architecture Design for Software as a Service in Cloud Environments
+
+The [article](SaaS_Design.pdf) focus on finding suitable architecture for current SaaS cloud solutions.
+
+In the perspective of this architecture, it is not focused too much on performance, but especially on scalability, testability, abstraction, isolation, language independence, development cost reduction, effectiveness, and reusability.
+
 ### Transformation from Identity Stone Age to Digital Identity
 
 The [article](IdentityEnhancement.pdf) describes the evolution of online identity into the modern "Identity as a Service" paradigm.
@@ -68,7 +74,7 @@ According to [HealthIT](https://www.healthit.gov/buzz-blog/electronic-health-and
 
 To create an EMR system one needs encryption and storage. For an EHR one needs to leverage EMR data for analytical and alerting scenarios.
 
-### eHealth is health care transformation, not "an IT project"
+### eHealth is health care transformation, not an IT project
 
 The article discusses [a different mindset needed to build eHealth](eHealthBenefits.pdf) systems. The author states that:
 
@@ -216,6 +222,34 @@ What this study has added to our knowledge:
 - Key barriers to using eHealth for individualized performance feedback in Malawi are provider rotations, disruptions to care processes, user acceptance of eHealth, and performance indicator lifespan.
 - Technology designed for eHealth-based audit and feedback in low-resource settings could accommodate these barriers using routine data quality assessment.
 - Understanding low-resource clinical settings as complex adaptive systems (CASs) may enable designers of technology to effectively model change processes for audit and feedback.
+
+### A Literature Review of eHealth Sector and Challenges in Nigeria
+
+The [article](NigeriaHealthcare.pdf) provides a summary of the challenges that prevent eHealth adoption within Nigeria. They realized from the literature
+review that a full scale implementation which would consider organizational structure, technology platform, policy, legislation, social benefits and change management is required.
+
+This is similar feedback to the [Iraqi eHealthCare](Iraqi_Healthcare.pdf) article which also cited (p135):
+
+- Organizational Theory
+- Diffusion of Innovation Theory
+- Theory of Reasoned Action
+
+eHealth adoption is not quite the same in most of the developing countries, such as Nigeria, Uganda, Zimbabwe, Rwanda, Namibia, India, Afghanistan, Malaysia, Libya, and so on: provision of good and affordable health care services have always been a problem due to numerous factors such as: poor, ICT infrastructure, lack of constant electricity, inadequate health policies and lack of qualified personnel.
+
+Their health care eHealth system is also showing signs of wear and tear as the country has not spent enough on repairs. This can be seen as an example of why maintenance costs need to be included in the total cost of ownership of cloud based systems.
+
+### eHealth in Saudi Arabia: Current Trends, Challenges and Recommendations
+
+This [study](SaudiArabia_eHealthTrends.pdf) is to explore the current status of eHealth in Saudi Arabia from the perspective of health informatics professionals.
+
+1. what is the current status of eHealth in Saudi Arabia in terms of implementation and progress, from the
+perspective of health informatics professionals
+
+2. what are the different types of challenges facing eHealth in Saudi Arabia
+
+3. what are the existing trends and recommendations that will enhance eHealth efforts and outcomes in Saudi Arabia.
+
+Cultural, bureaucratic, and human resource issues are some of the main barriers to eHealth implementation in Saudi Arabia.
 
 ## Applications within eHealth
 
