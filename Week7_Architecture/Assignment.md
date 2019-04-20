@@ -10,7 +10,11 @@ Your presentation should provide the audience with the following:
 - Determine what some challenges in this area are.
 - Illustrate what types of data are typically stored in the cloud for e-health.
 
-Please record your slides as a screencast, which should be included in your submission. While there are many different high-quality screen cast tools, some include Screen-Cast-O-Matic < https://screencast-o-matic.com >, expression encoder < https://www.microsoft.com/en-us/download/details.aspx?id=24601 > and EZvid video maker < https://www.ezvid.com/download >
+Please record your slides as a screencast, which should be included in your submission. While there are many different high-quality screen cast tools, some include:
+
+- [Screen-Cast-O-Matic](https://screencast-o-matic.com)
+- [Expression encoder](https://www.microsoft.com/en-us/download/details.aspx?id=24601)
+- [EZvid video maker](https://www.ezvid.com/download)
 
 Incorporate appropriate animations, transitions, and graphics as well as speaker notes for each slide. The speaker notes may be comprised of brief paragraphs or bulleted lists.
 

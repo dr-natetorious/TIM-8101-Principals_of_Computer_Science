@@ -109,9 +109,9 @@ Key Failures:
 - Next their Personally Controlled eHealth Record system was given 467m -- but was poorly marketed resulting in under 700k users
 - Canada Health Infoway Inc is a not for profit that has received 2.1b government funds -- they have invested in 380 different projects which are slowly converging
 
-__International core Patient Data Exchange Servies_: Europe has attempted to create a record exchange that spans borders, languages, and even alphabets. The EC organized the kickoff from 2008-14 and has since delegated management to member nations.
+_International core Patient Data Exchange Servies_: Europe has attempted to create a record exchange that spans borders, languages, and even alphabets. The EC organized the kickoff from 2008-14 and has since delegated management to member nations.
 
-### Centralized Healthcare Cyber-Physical System’s Architecture Development
+### Centralized Healthcare Cyber-Physical System's Architecture Development
 
 The [article](HealthCare_CyberPhysical.pdf) describes the need for bluring the edge between physical and cyber health care systems. Physical health care are sensors, monitors, and different tests. Cyber refers to the algorithms and analytics that enumerate that data and look for patterns.
 
