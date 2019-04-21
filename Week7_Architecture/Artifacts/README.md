@@ -272,5 +272,3 @@ The proposed system architecture and its implementation is based upon:
 The [article](MobileCloud_for_Emergencies.pdf) describes a mobile application for getting emergency assistance or scheduling medical appointments.
 
 Their implementation uses a centralized database in the cloud and then a mobile notification system.
-
-### An integrated holistic model for an eHealth system: A national implementation approach and a new cloud-based security model
