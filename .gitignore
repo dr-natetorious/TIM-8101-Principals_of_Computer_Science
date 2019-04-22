@@ -13,6 +13,7 @@
 /Week3_AnalyzeTemplates/CppRefresher/src/.vs/CppRefresher/v16
 /Week3_AnalyzeTemplates/CppRefresher/src/Debug
 **/~*.docx
+**/~*.pptx
 **/~*.tmp
 **/a.out
 **/klee-last
