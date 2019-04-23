@@ -21,3 +21,5 @@
 **/Klee/tutorials/*.bc
 **/Klee/tutorials/get_sign
 **/.vscode
+**/obj/*
+**/.vs/*
