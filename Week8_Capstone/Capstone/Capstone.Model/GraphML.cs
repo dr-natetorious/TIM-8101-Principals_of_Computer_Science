@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Xml;
 
 namespace Capstone.Model
@@ -40,6 +42,34 @@ namespace Capstone.Model
             this.Graph.AppendXml(rootNode);
 
             return xml;
+        }
+
+        public string PrintXML()
+        {
+            using (var memoryStream = new MemoryStream())
+            using (var writer = new XmlTextWriter(memoryStream, Encoding.UTF8))
+            {
+                var document = GetXmlDocument();
+
+                writer.Formatting = Formatting.Indented;
+
+                // Write the XML into a formatting XmlTextWriter
+                document.WriteContentTo(writer);
+                writer.Flush();
+                memoryStream.Flush();
+
+                // Have to rewind the MemoryStream in order to read
+                // its contents.
+                memoryStream.Position = 0;
+
+                // Read MemoryStream contents into a StreamReader.
+                using (var reader = new StreamReader(memoryStream))
+                {
+                    // Extract the text from the StreamReader.
+                    string formattedXml = reader.ReadToEnd();
+                    return formattedXml;
+                }
+            }
         }
     }
 }

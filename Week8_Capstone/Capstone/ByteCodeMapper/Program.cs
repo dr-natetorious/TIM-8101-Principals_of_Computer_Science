@@ -1,5 +1,7 @@
-﻿using Capstone.Model;
+﻿using ByteCodeMapper.Model;
+using Capstone.Model;
 using System;
+using System.IO;
 
 namespace ByteCodeMapper
 {
@@ -7,6 +9,18 @@ namespace ByteCodeMapper
     {
         static void Main(string[] args)
         {
+            var classDefinition = new ClassDefinition(new StreamReader(File.OpenRead(
+                @"S:\personal\ncu\TIM-8101-Principals_of_Computer_Science\Week8_Capstone\Artifacts\bytecode\ryey\easer\core\EHService.java")));
+
+            var graphML = new GraphML();
+            var mapper = new JavaMapper(graphML);
+            mapper.Append(classDefinition);
+
+            Console.Write(graphML.PrintXML());
+        }
+
+        static void CreateTestGraph()
+        { 
             var graphml = new GraphML();
             graphml.Keys.AddRange(new[]
             {

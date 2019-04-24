@@ -17,7 +17,7 @@ namespace ByteCodeMapper
                 ?? throw new ArgumentNullException(nameof(graphML));
         }
 
-        public void Append(ClassDeclaration classDeclaration)
+        public void Append(ClassDefinition classDeclaration)
         {
             var classNode = 
                 this.graphML.GetOrCreateVertex(
@@ -73,7 +73,7 @@ namespace ByteCodeMapper
             }
         }
 
-        private void Append(Vertex classNode, MethodDeclaration method)
+        private void Append(Vertex classNode, MethodDefinition method)
         {
             var methodNode = Vertex.Create(method.Name, new
             {

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ByteCodeMapper.Model
 {
-    public class ClassDeclaration
+    public class ClassDefinition
     {
         public string Name { get; set; }
 
@@ -13,18 +14,33 @@ namespace ByteCodeMapper.Model
 
         public List<string> Implements { get; set; } = new List<string>();
 
-        public List<MethodDeclaration> Methods { get; set; } = new List<MethodDeclaration>();
+        public List<MethodDefinition> Methods { get; set; } = new List<MethodDefinition>();
 
-        public ClassDeclaration(string declaration)
+        public ClassDefinition(string declaration)
         {
-            throw new NotImplementedException();
+            var tokens = declaration.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .SkipWhile(t => t != "class")
+                .Skip(1);
+
+            this.Name = tokens.First();
+
+            this.Extends = tokens
+                .SkipWhile(t => t != "extends")
+                .Skip(1)
+                .FirstOrDefault();
+
+            this.Implements = tokens
+                .SkipWhile(t => t != "implements")
+                .Skip(1)
+                .TakeWhile(t => t != "extends" || t != "{")
+                .ToList();
         }
 
-        public ClassDeclaration(StreamReader reader)
+        public ClassDefinition(StreamReader reader)
         {
             var line = string.Empty;
             var previousLine = string.Empty;
-            ClassDeclaration classDefinition = null;
+            ClassDefinition classDeclaration = null;
             while ((line = reader.ReadLine()?.Trim()) != null)
             {
                 var lineType = GetLineType(line);
@@ -36,11 +52,12 @@ namespace ByteCodeMapper.Model
                 switch (lineType)
                 {
                     case LineType.BeginClassDefinition:
-                        classDefinition = new ClassDeclaration(line);
+                        classDeclaration = new ClassDefinition(line);
                         break;
 
                     case LineType.BeginMethod:
-                        classDefinition.Methods.Add(new MethodDeclaration(
+                        classDeclaration.Methods.Add(new MethodDefinition(
+                            classDefinition: classDeclaration,
                             declaration: previousLine,
                             reader: reader));
                         break;
