@@ -8,8 +8,12 @@ using System.Xml;
 namespace Capstone.Model
 {
     public class GraphML
-    {        
-        public List<MetadataKey> Keys { get; set; } = new List<MetadataKey>();
+    {
+        public List<MetadataKey> Keys { get; set; } = new List<MetadataKey>
+        {
+            MetadataKey.CreateForNode("labelV"),
+            MetadataKey.CreateForEdge("labelE")
+        };
 
         public GraphNode Graph { get; set; } = new GraphNode { Id = "G" };
 

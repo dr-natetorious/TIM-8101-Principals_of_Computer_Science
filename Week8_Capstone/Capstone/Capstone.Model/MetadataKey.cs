@@ -57,11 +57,11 @@ namespace Capstone.Model
             att.Value = Convert.ToString(this.For);
             keyNode.Attributes.Append(att);
 
-            att = parentNode.OwnerDocument.CreateAttribute("att.name");
+            att = parentNode.OwnerDocument.CreateAttribute("attr.name");
             att.Value = Convert.ToString(this.Name);
             keyNode.Attributes.Append(att);
 
-            att = parentNode.OwnerDocument.CreateAttribute("att.type");
+            att = parentNode.OwnerDocument.CreateAttribute("attr.type");
             att.Value = Convert.ToString(this.Type);
             keyNode.Attributes.Append(att);
         }
