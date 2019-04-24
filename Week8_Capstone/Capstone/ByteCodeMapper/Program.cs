@@ -9,14 +9,30 @@ namespace ByteCodeMapper
     {
         static void Main(string[] args)
         {
-            var classDefinition = new ClassDefinition(new StreamReader(File.OpenRead(
-                @"S:\personal\ncu\TIM-8101-Principals_of_Computer_Science\Week8_Capstone\Artifacts\bytecode\ryey\easer\core\EHService.java")));
-
             var graphML = new GraphML();
             var mapper = new JavaMapper(graphML);
-            mapper.Append(classDefinition);
 
-            Console.Write(graphML.PrintXML());
+            foreach (var file in new DirectoryInfo(
+                @"S:\personal\ncu\TIM-8101-Principals_of_Computer_Science\Week8_Capstone\Artifacts\bytecode")
+                .GetFiles("*.java", SearchOption.AllDirectories))
+            {
+                Console.WriteLine($"Parsing: {file.FullName}...");
+                var classDefinition = ClassDefinition.Read(
+                    new StreamReader(file.OpenRead()));
+
+                if (classDefinition == null)
+                {
+                    Console.WriteLine("\t No definition was extracted.");
+                    continue;
+                }
+
+                mapper.Append(classDefinition);
+            }
+
+            //Console.Write(graphML.PrintXML());
+            File.WriteAllText(
+                path: @"c:\temp\fullapp.graphml",
+                contents: graphML.PrintXML());
         }
 
         static void CreateTestGraph()

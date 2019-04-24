@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ByteCodeMapper.Model
 {
@@ -15,7 +14,7 @@ namespace ByteCodeMapper.Model
 #if ARG_SUPPORT
         public List<string> Arguments { get; set; } = new List<string>();
 #endif
-        public IReadOnlyList<string> Assembly { get; set; } = new List<string>();
+        public IReadOnlyList<string> Assembly { get; set; }
 
         public MethodDefinition(ClassDefinition classDefinition, string declaration, StreamReader reader)
         {
@@ -48,10 +47,17 @@ namespace ByteCodeMapper.Model
 
         public string GetMethodName(string line)
         {
+            line = line.Trim().Split(';').First();
+
+            if (line == "static {}")
+            {
+                return $"{this.classDefinition.Name}.ctr";
+            }
+
             var tokens = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            var modifiers = tokens.TakeWhile(t => t.Contains("(", StringComparison.OrdinalIgnoreCase) == false);
-            var signature = string.Join(" ", tokens);
+            var modifiers = tokens.TakeWhile(t => t.Contains("(", StringComparison.OrdinalIgnoreCase) == false).ToArray();
+            var signature = string.Join(" ", tokens.Skip(modifiers.Length));
 
             var signatureComponents = signature.Split(new[] { '(' }, 2);
             var methodName = signatureComponents[0];
@@ -60,8 +66,38 @@ namespace ByteCodeMapper.Model
             // TODO: Add support for getting arguments here...
             var arguments = "(" + signatureComponents[1];
 #endif
+            if (methodName == this.classDefinition.Name)
+            {
+                methodName = ".ctr";
+            }
 
             return $"{this.classDefinition.Name}.{methodName}";
+        }
+
+        public List<string> GetMethodsInvocations()
+        {
+            var list = new List<string>();
+            foreach (var statement in this.Assembly)
+            {
+                if (statement.Contains("// Method ") == false)
+                {
+                    continue;
+                }
+
+                var methodName = statement.Substring(statement.IndexOf("// Method ") + 10).Trim();
+                methodName = methodName.Replace("\"<init>\"", ".ctr");
+                methodName = methodName.Split(new[] { ':' }, 2)[0];
+                methodName = methodName.Replace("/", ".");
+
+                if (methodName.Contains(".") == false)
+                {
+                    methodName = $"{this.classDefinition.Extends ?? this.classDefinition.Name}.{methodName}";
+                }
+
+                list.Add(methodName);
+            }
+
+            return list;
         }
     }
 }

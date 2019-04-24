@@ -1,9 +1,7 @@
 ﻿using Capstone.Model;
 using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Text;
 using ByteCodeMapper.Model;
+using System.Linq;
 
 namespace ByteCodeMapper
 {
@@ -75,11 +73,40 @@ namespace ByteCodeMapper
 
         private void Append(Vertex classNode, MethodDefinition method)
         {
-            var methodNode = Vertex.Create(method.Name, new
-            {
-                label = "method"
-            });
+            var methodNode = 
+                this.graphML.GetOrCreateVertex(
+                id: method.Name,
+                create: () => Vertex.Create(
+                    id: method.Name,
+                    properties: new
+                    {
+                        label = "method",
+                    }));
 
+            this.graphML.Graph.Children.Add(
+                    Edge.Create(classNode, methodNode, new
+                    {
+                        label = "member"
+                    }));
+
+            foreach (var invocation in method.GetMethodsInvocations().Distinct())
+            {
+                var targetNode =
+                    this.graphML.GetOrCreateVertex(
+                    id: invocation,
+                    create: () => Vertex.Create(
+                        id: invocation,
+                        properties: new
+                        {
+                            label = "method",
+                        }));
+
+                this.graphML.Graph.Children.Add(
+                    Edge.Create(methodNode, targetNode, new
+                    {
+                        label = "invokes"
+                    }));
+            }
         }
     }
 }

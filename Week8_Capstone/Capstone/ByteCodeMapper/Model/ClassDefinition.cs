@@ -19,7 +19,7 @@ namespace ByteCodeMapper.Model
         public ClassDefinition(string declaration)
         {
             var tokens = declaration.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                .SkipWhile(t => t != "class")
+                .SkipWhile(t => t != "class" && t != "interface")
                 .Skip(1);
 
             this.Name = tokens.First();
@@ -36,20 +36,19 @@ namespace ByteCodeMapper.Model
                 .ToList();
         }
 
-        public ClassDefinition(StreamReader reader)
+        public static ClassDefinition Read(StreamReader reader)
         {
             var line = string.Empty;
             var previousLine = string.Empty;
             ClassDefinition classDeclaration = null;
             while ((line = reader.ReadLine()?.Trim()) != null)
             {
-                var lineType = GetLineType(line);
-                if (lineType == LineType.Ignore)
+                if (string.IsNullOrWhiteSpace(line))
                 {
                     continue;
                 }
 
-                switch (lineType)
+                switch (GetLineType(line))
                 {
                     case LineType.BeginClassDefinition:
                         classDeclaration = new ClassDefinition(line);
@@ -61,14 +60,19 @@ namespace ByteCodeMapper.Model
                             declaration: previousLine,
                             reader: reader));
                         break;
+
+                    case LineType.Ignore:
+                        break;
                 }
 
                 previousLine = line;
             }
+
+            return classDeclaration;
         }
 
 
-        private LineType GetLineType(string line)
+        private static LineType GetLineType(string line)
         {
             if (line.EndsWith("{"))
             {
