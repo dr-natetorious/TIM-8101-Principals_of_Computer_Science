@@ -1,0 +1,43 @@
+final class com.google.common.base.CaseFormat$1 extends com.google.common.base.CaseFormat {
+  com.google.common.base.CaseFormat$1(java.lang.String, int, com.google.common.base.CharMatcher, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: aload_3
+       4: aload         4
+       6: aconst_null
+       7: invokespecial #9                  // Method com/google/common/base/CaseFormat."<init>":(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;Lcom/google/common/base/CaseFormat$1;)V
+      10: return
+
+  java.lang.String convert(com.google.common.base.CaseFormat, java.lang.String);
+    Code:
+       0: aload_1
+       1: getstatic     #16                 // Field LOWER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
+       4: if_acmpne     16
+       7: aload_2
+       8: bipush        45
+      10: bipush        95
+      12: invokevirtual #22                 // Method java/lang/String.replace:(CC)Ljava/lang/String;
+      15: areturn
+      16: aload_1
+      17: getstatic     #25                 // Field UPPER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
+      20: if_acmpne     35
+      23: aload_2
+      24: bipush        45
+      26: bipush        95
+      28: invokevirtual #22                 // Method java/lang/String.replace:(CC)Ljava/lang/String;
+      31: invokestatic  #31                 // Method com/google/common/base/Ascii.toUpperCase:(Ljava/lang/String;)Ljava/lang/String;
+      34: areturn
+      35: aload_0
+      36: aload_1
+      37: aload_2
+      38: invokespecial #33                 // Method com/google/common/base/CaseFormat.convert:(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
+      41: areturn
+
+  java.lang.String normalizeWord(java.lang.String);
+    Code:
+       0: aload_1
+       1: invokestatic  #37                 // Method com/google/common/base/Ascii.toLowerCase:(Ljava/lang/String;)Ljava/lang/String;
+       4: areturn
+}

@@ -1,0 +1,3 @@
+public interface com.google.errorprone.annotations.concurrent.UnlockMethod extends java.lang.annotation.Annotation {
+  public abstract java.lang.String[] value();
+}
