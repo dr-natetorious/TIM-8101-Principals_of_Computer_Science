@@ -1,0 +1,13 @@
+class com.google.common.base.CharMatcher$NegatedFastMatcher extends com.google.common.base.CharMatcher$Negated {
+  com.google.common.base.CharMatcher$NegatedFastMatcher(com.google.common.base.CharMatcher);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #11                 // Method com/google/common/base/CharMatcher$Negated."<init>":(Lcom/google/common/base/CharMatcher;)V
+       5: return
+
+  public final com.google.common.base.CharMatcher precomputed();
+    Code:
+       0: aload_0
+       1: areturn
+}

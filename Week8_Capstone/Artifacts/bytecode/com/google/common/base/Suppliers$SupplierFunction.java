@@ -1,0 +1,2 @@
+interface com.google.common.base.Suppliers$SupplierFunction<T> extends com.google.common.base.Function<com.google.common.base.Supplier<T>, T> {
+}

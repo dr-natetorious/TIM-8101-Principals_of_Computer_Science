@@ -1,0 +1,3 @@
+public interface com.google.errorprone.annotations.Immutable extends java.lang.annotation.Annotation {
+  public abstract java.lang.String[] containerOf();
+}

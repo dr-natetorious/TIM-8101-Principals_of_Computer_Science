@@ -1,21 +1,21 @@
-# What is Apache TinkerPop ?
+# What is Apache TinkerPop
 
 It is an Graph Database server which you write Gremlin based queries.
 
-## How do I start one locally?
+## How do I start one locally
 
 A [docker image](https://hub.docker.com/r/tinkerpop/gremlin-server) can be launched as:
 
-```
+```bash
 docker run -it -p 8182:8182 tinkerpop/gremlin-server
 docker run -it tinkerpop/gremlin-console
 ```
 
-## How do I build the graph?
+## How do I build the graph
 
 A [guide](http://tinkerpop.apache.org/docs/3.1.0-incubating/tutorials-getting-started.html) is provided here.
 
-```
+```bash
 graph = TinkerGraph.open()
 g = graph.traversal()
 
@@ -24,7 +24,7 @@ same = g.V().hasLabel('taco')
 also_same = g.V(v1)
 ```
 
-## How do I visualize my graphs?
+## How do I visualize my graphs
 
 The recommended program for TinkerPop is [Gephi](https://gephi.org/users/download/)
 
@@ -40,7 +40,7 @@ Then the file can be imported into Gephi.
 
 To export a smaller chunk of the graph use:
 
-```
+```bash
 gremlin> g.V(v_0).outE().subgraph('sg').cap('sg').next()
 ==>tinkergraph[vertices:348 edges:3319]
 gremlin> subgraph = g.V(v_0).outE().subgraph('sg').cap('sg').next()
@@ -48,7 +48,7 @@ gremlin> subgraph = g.V(v_0).outE().subgraph('sg').cap('sg').next()
 gremlin> subgraph.io(graphml()).writeGraph('/tmp/node-0.graphml')
 ```
 
-## Where did the data sets come from?
+## Where did the data sets come from
 
 - Marvel http://syntagmatic.github.io/exposedata/marvel/
 
@@ -64,13 +64,13 @@ gremlin> subgraph.io(graphml()).writeGraph('/tmp/node-0.graphml')
 
 - Install Grephi
 
-## How DO I reload the graph?
+## How DO I reload the graph
 
-```
+```bash
 docker cp Facebook.graphml tinker:/tmp
 ```
 
-```
+```bash
 docker run -it tinkerpop/gremlin-console
 
 Mar 16, 2019 5:54:30 AM java.util.prefs.FileSystemPreferences$1 run
