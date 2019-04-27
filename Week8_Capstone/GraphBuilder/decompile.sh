@@ -80,7 +80,7 @@ then
     do
       echo "Class: $x"
       outfile=`echo $x | sed s/\.class/\.java/`
-      javap -c $x > $outfile
+      javap -c -p -s $x > $outfile
     done
   popd
 fi

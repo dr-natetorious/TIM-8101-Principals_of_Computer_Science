@@ -97,7 +97,12 @@ namespace ByteCodeMapper.Model
                 list.Add(methodName);
             }
 
-            return list;
+            return list.Distinct().ToList();
+        }
+
+        public override string ToString()
+        {
+            return this.Name ?? "no name available.";
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ByteCodeMapper
                         id: classDeclaration.Name,
                         properties: new
                         {
-                            label = "class",
+                            node_type = "class",
                         }));
 
             if (string.IsNullOrWhiteSpace(classDeclaration.Extends) == false)
@@ -36,13 +36,13 @@ namespace ByteCodeMapper
                             id: classDeclaration.Extends,
                             properties: new
                             {
-                                label = "class",
+                                node_type = "class",
                             }));
 
                 this.graphML.Graph.Children.Add(
                     Edge.Create(classNode, extendsNode, new
                     {
-                        label = "extends"
+                        reference_type = "extends"
                     }));
             }
 
@@ -55,13 +55,13 @@ namespace ByteCodeMapper
                            id: implements,
                            properties: new
                            {
-                               label = "class",
+                               node_type = "class",
                            }));
 
                 this.graphML.Graph.Children.Add(
                     Edge.Create(classNode, implementsNode, new
                     {
-                        label = "implements"
+                        reference_type = "implements"
                     }));
             }
 
@@ -73,6 +73,12 @@ namespace ByteCodeMapper
 
         private void Append(Vertex classNode, MethodDefinition method)
         {
+            var invocations = method.GetMethodsInvocations();
+            ////if (invocations.Count == 0)
+            ////{
+            ////    return;
+            ////}
+
             var methodNode = 
                 this.graphML.GetOrCreateVertex(
                 id: method.Name,
@@ -80,16 +86,17 @@ namespace ByteCodeMapper
                     id: method.Name,
                     properties: new
                     {
-                        label = "method",
+                        node_type = "method",
                     }));
 
             this.graphML.Graph.Children.Add(
                     Edge.Create(classNode, methodNode, new
                     {
-                        label = "member"
+                        reference_type = "member"
                     }));
 
-            foreach (var invocation in method.GetMethodsInvocations().Distinct())
+            
+            foreach (var invocation in invocations)
             {
                 var targetNode =
                     this.graphML.GetOrCreateVertex(
@@ -98,13 +105,19 @@ namespace ByteCodeMapper
                         id: invocation,
                         properties: new
                         {
-                            label = "method",
+                            node_type = "method",
                         }));
 
                 this.graphML.Graph.Children.Add(
                     Edge.Create(methodNode, targetNode, new
                     {
-                        label = "invokes"
+                        reference_type = "invokes"
+                    }));
+
+                this.graphML.Graph.Children.Add(
+                    Edge.Create(classNode, targetNode, new
+                    {
+                        called_with = method.Name
                     }));
             }
         }

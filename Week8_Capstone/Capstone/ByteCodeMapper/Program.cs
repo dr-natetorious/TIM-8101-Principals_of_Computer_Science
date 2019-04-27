@@ -12,11 +12,20 @@ namespace ByteCodeMapper
             //// CreateTestGraph();
 
             var graphML = new GraphML();
+            graphML.Keys.AddRange(new[]
+            {
+                MetadataKey.CreateForNode("node_type"),
+                MetadataKey.CreateForEdge("edge_type"),
+                MetadataKey.CreateForEdge("reference_type"),
+                MetadataKey.CreateForEdge("called_with")
+            });
+
             var mapper = new JavaMapper(graphML);
 
             foreach (var file in new DirectoryInfo(
-                @"S:\personal\ncu\TIM-8101-Principals_of_Computer_Science\Week8_Capstone\Artifacts\bytecode")
+                @"S:\personal\apk-download\decompile\bytecode\org\smssecure")
                 .GetFiles("*.java", SearchOption.AllDirectories))
+            ////var file = new FileInfo(@"S:\personal\apk-download\decompile\bytecode\org\smssecure\smssecure\sms\MessageSender.java");
             {
                 Console.WriteLine($"Parsing: {file.FullName}...");
                 var classDefinition = ClassDefinition.Read(
@@ -33,7 +42,7 @@ namespace ByteCodeMapper
 
             //Console.Write(graphML.PrintXML());
             File.WriteAllText(
-                path: @"c:\temp\fullapp.graphml",
+                path: @"fullapp.graphml",
                 contents: graphML.PrintXML());
         }
 
