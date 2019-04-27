@@ -94,7 +94,7 @@ namespace ByteCodeMapper
             this.graphML.Graph.Children.Add(
                     Edge.Create(methodNode, classNode, new
                     {
-                        reference_type = "declares"
+                        reference_type = "declared_by"
                     }));
 
             foreach (var invocation in invocations)
