@@ -2,7 +2,7 @@
 
 # Set globals here...
 apk_url=$1
-do_decompile=$2 || true
+do_decompile= true
 apk_local=apk.zip
 
 
@@ -13,6 +13,13 @@ function header(){
   echo "=========================="
   echo  
 }
+
+if [ ! $do_decompile ];
+then
+  header "WARNING: DECOMPILE IS NOT ENABLED"
+  echo "Only soft extraction will be performed"
+  echo
+fi  
 
 # Make temporary directory for this
 header Creating temp path
@@ -29,13 +36,13 @@ then
   aws s3 cp $apk_url $apk_local 
 
 
-  outdir=s3://apk.natetorio.us/`basename $apk_url`
-  exists=`aws s3 ls $outdir | wc -l`
-  if [ $exists -gt 0 ];
-  then
-    header "exit early: already exists"
-    exit 0
-  fi 
+  # outdir=s3://apk.natetorio.us/`basename $apk_url`
+  # exists=`aws s3 ls $outdir | wc -l`
+  # if [ $exists -gt 0 ];
+  # then
+  #   header "exit early: already exists"
+  #   exit 0
+  # fi 
 
 else
   curl -o $apk_local $apk_url
