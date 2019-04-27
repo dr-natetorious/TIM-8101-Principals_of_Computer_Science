@@ -1,18 +1,36 @@
 ﻿using Capstone.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace PermissionChecker.Extensions
 {
     public static class GraphMLExtensions
     {
+        public static bool OnlyDangerousAPI { get; set; } = true;
+
+        private static List<string> DangerousPermissions { get; } =
+            File.ReadAllLines("dangerous.txt")
+            .Select(d => d.Trim())
+            .ToList();
+
         public static void AddHasPermission(this GraphML graph, Vertex manifest, XmlNode node)
         {
+            var name = node.AndroidName();
+            if (OnlyDangerousAPI)
+            {
+                if (DangerousPermissions.Contains(name) == false)
+                {
+                    return;
+                }
+            }
+
             var perm = graph.GetOrCreateVertex(
-                id: $"perm__{node.Attributes["android:name"].Value}",
+                id: $"perm__{name}",
                 create: () => Vertex.Create(
-                    id: $"perm__{node.Attributes["android:name"].Value}",
+                    id: $"perm__{name}",
                     properties: new
                     {
                         node_type = "enabled_permission"
@@ -94,7 +112,7 @@ namespace PermissionChecker.Extensions
             if (manifestChildNode.IsExported() == false) return;
 
             var permissions = GetPermissions(manifestChildNode);
-            if (permissions.Count > 0)
+            if (permissions.Count > 0 && OnlyDangerousAPI)
             {
                 return;
             }
@@ -143,7 +161,7 @@ namespace PermissionChecker.Extensions
             var list = new List<string>();
             foreach (XmlAttribute attribute in serviceNode.Attributes)
             {
-                if (string.Equals(attribute.LocalName,"permission", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(attribute.LocalName, "permission", StringComparison.OrdinalIgnoreCase))
                 {
                     list.Add(attribute.Value);
                 }
