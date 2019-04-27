@@ -22,14 +22,15 @@ namespace ByteCodeMapper
 
             var mapper = new JavaMapper(graphML);
 
+            var f = new FileInfo(@"S:\personal\apk-download\decompile\updated_bytecode\org\smssecure\smssecure\sms\MessageSender.java");
+            var def = ClassDefinition.Read(f.OpenText());
+
             foreach (var file in new DirectoryInfo(
-                @"S:\personal\apk-download\decompile\bytecode\org\smssecure")
+                @"S:\personal\apk-download\decompile\updated_bytecode\org\smssecure")
                 .GetFiles("*.java", SearchOption.AllDirectories))
-            ////var file = new FileInfo(@"S:\personal\apk-download\decompile\bytecode\org\smssecure\smssecure\sms\MessageSender.java");
             {
                 Console.WriteLine($"Parsing: {file.FullName}...");
-                var classDefinition = ClassDefinition.Read(
-                    new StreamReader(file.OpenRead()));
+                var classDefinition = ClassDefinition.Read(file.OpenText());
 
                 if (classDefinition == null)
                 {
