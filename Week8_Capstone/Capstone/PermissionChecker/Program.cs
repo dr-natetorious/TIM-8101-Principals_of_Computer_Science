@@ -20,7 +20,8 @@ namespace PermissionChecker
                 MetadataKey.CreateForNode("node_type"),
                 MetadataKey.CreateForNode("filtered"),
                 MetadataKey.CreateForEdge("enabled"),
-                MetadataKey.CreateForEdge("edge_type")
+                MetadataKey.CreateForEdge("edge_type"),
+                MetadataKey.CreateForNode("is_background")
             });
 
             var files = directory.GetFiles("AndroidManifest.xml", SearchOption.AllDirectories);

@@ -93,7 +93,11 @@ namespace PermissionChecker.Extensions
 
         public static void AddService(this GraphML graph, Vertex manifest, XmlNode serviceNode)
         {
-            AddNode(graph, manifest, serviceNode, "service");
+            var vertex = AddNode(graph, manifest, serviceNode, "service");
+            vertex?.Labels.AddRange(GraphElementLabel.CreateLabels(new
+            {
+                is_background = "true"
+            }));
         }
 
 
@@ -104,17 +108,21 @@ namespace PermissionChecker.Extensions
 
         public static void AddReceiver(this GraphML graph, Vertex manifest, XmlNode receiver)
         {
-            AddNode(graph, manifest, receiver, "receiver");
+            var vertex = AddNode(graph, manifest, receiver, "receiver");
+            vertex?.Labels.AddRange(GraphElementLabel.CreateLabels(new
+            {
+                is_background = "true"
+            }));
         }
 
-        private static void AddNode(this GraphML graph, Vertex manifest, XmlNode manifestChildNode, string nodeType)
+        private static Vertex AddNode(this GraphML graph, Vertex manifest, XmlNode manifestChildNode, string nodeType)
         {
-            if (manifestChildNode.IsExported() == false) return;
+            if (manifestChildNode.IsExported() == false) return null;
 
             var permissions = GetPermissions(manifestChildNode);
             if (permissions.Count > 0 && OnlyDangerousAPI)
             {
-                return;
+                return null;
             }
 
             var service = graph.GetOrCreateVertex(
@@ -154,6 +162,8 @@ namespace PermissionChecker.Extensions
                         edge_type = "requires"
                     }));
             }
+
+            return service;
         }
 
         private static List<string> GetPermissions(XmlNode serviceNode)
