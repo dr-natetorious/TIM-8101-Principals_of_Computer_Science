@@ -74,10 +74,6 @@ namespace ByteCodeMapper
         private void Append(Vertex classNode, MethodDefinition method)
         {
             var invocations = method.GetMethodsInvocations();
-            ////if (invocations.Count == 0)
-            ////{
-            ////    return;
-            ////}
 
             var methodNode = 
                 this.graphML.GetOrCreateVertex(
@@ -95,7 +91,12 @@ namespace ByteCodeMapper
                         reference_type = "member"
                     }));
 
-            
+            this.graphML.Graph.Children.Add(
+                    Edge.Create(methodNode, classNode, new
+                    {
+                        reference_type = "declares"
+                    }));
+
             foreach (var invocation in invocations)
             {
                 var targetNode =
