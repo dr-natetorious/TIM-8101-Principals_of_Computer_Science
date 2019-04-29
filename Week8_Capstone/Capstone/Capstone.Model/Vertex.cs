@@ -1,8 +1,10 @@
 ﻿using System.Xml;
-using System.Xml.Serialization;
 
 namespace Capstone.Model
 {
+    /// <summary>
+    /// Presents a vertex in the graph (&lt;node/&gt element) 
+    /// </summary>
     public class Vertex : GraphElement
     {
         public string Id { get; set; }

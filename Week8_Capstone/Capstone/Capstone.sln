@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteCodeMapper", "ByteCodeM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capstone.Model", "Capstone.Model\Capstone.Model.csproj", "{F504E0FC-939B-4F7F-AB7A-61CB059B7BF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduceBucketListing", "ReduceBucketListing\ReduceBucketListing.csproj", "{19520974-A6C0-4E75-A641-ACA369DB1E5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReduceBucketListing", "ReduceBucketListing\ReduceBucketListing.csproj", "{19520974-A6C0-4E75-A641-ACA369DB1E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadManifestFiles", "LoadManifestFiles\LoadManifestFiles.csproj", "{21751685-4BD4-47DA-816A-CB1CE1140046}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionChecker", "PermissionChecker\PermissionChecker.csproj", "{1B03C17A-9944-4507-AEA6-E17EFC300B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermissionChecker", "PermissionChecker\PermissionChecker.csproj", "{1B03C17A-9944-4507-AEA6-E17EFC300B22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{19520974-A6C0-4E75-A641-ACA369DB1E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19520974-A6C0-4E75-A641-ACA369DB1E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19520974-A6C0-4E75-A641-ACA369DB1E5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21751685-4BD4-47DA-816A-CB1CE1140046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21751685-4BD4-47DA-816A-CB1CE1140046}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21751685-4BD4-47DA-816A-CB1CE1140046}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21751685-4BD4-47DA-816A-CB1CE1140046}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B03C17A-9944-4507-AEA6-E17EFC300B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B03C17A-9944-4507-AEA6-E17EFC300B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B03C17A-9944-4507-AEA6-E17EFC300B22}.Release|Any CPU.ActiveCfg = Release|Any CPU

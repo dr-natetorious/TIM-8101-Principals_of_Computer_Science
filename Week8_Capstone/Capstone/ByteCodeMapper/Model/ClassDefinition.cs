@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ByteCodeMapper.Model
 {
+    /// <summary>
+    /// Represents a class definition for a Java class.
+    /// </summary>
+    /// <remarks>
+    /// Files are assumed to be generated as:
+    /// 
+    ///     javap -s -p -c foo.class > foo.java
+    /// </remarks>
     public class ClassDefinition
     {
         public string Name { get; set; }
@@ -16,6 +23,10 @@ namespace ByteCodeMapper.Model
 
         public List<MethodDefinition> Methods { get; set; } = new List<MethodDefinition>();
 
+        /// <summary>
+        /// Initializes the class definition using the declaration from Java Assembly file.
+        /// </summary>
+        /// <param name="declaration">Example: <value>public class org.smssecure.smssecure.sms.MessageSender</value>.</param>
         public ClassDefinition(string declaration)
         {
             var tokens = declaration.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
@@ -36,6 +47,11 @@ namespace ByteCodeMapper.Model
                 .ToList();
         }
 
+        /// <summary>
+        /// Reads an entire Java Assembly file and parses it accordingly.
+        /// </summary>
+        /// <param name="reader">An open stream reader to be used./param>
+        /// <returns>The Parsed file or null if the file was empty.</returns>
         public static ClassDefinition Read(StreamReader reader)
         {
             var line = string.Empty;

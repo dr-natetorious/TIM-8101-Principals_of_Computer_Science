@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace ByteCodeMapper.Model
 {
+    /// <summary>
+    /// Represents a method within a <see cref="ClassDefinition"/>.
+    /// </summary>
     public class MethodDefinition
     {
         private readonly ClassDefinition classDefinition;
@@ -14,6 +17,9 @@ namespace ByteCodeMapper.Model
 #if ARG_SUPPORT
         public List<string> Arguments { get; set; } = new List<string>();
 #endif
+        /// <summary>
+        /// Gets or sets the raw assembly instructions.
+        /// </summary>
         public IReadOnlyList<string> Assembly { get; set; }
 
         public MethodDefinition(ClassDefinition classDefinition, string declaration, StreamReader reader)
@@ -28,6 +34,10 @@ namespace ByteCodeMapper.Model
                 reader ?? throw new ArgumentNullException(nameof(reader)));
         }
 
+        /// <summary>
+        /// Reads until the end of the method or file is detected
+        /// </summary>
+        /// <param name="reader">The open reader to be used</param>
         private void ReadToEnd(StreamReader reader)
         {
             var list = new List<string>();
@@ -45,6 +55,13 @@ namespace ByteCodeMapper.Model
             this.Assembly = list;
         }
 
+        /// <summary>
+        /// Extracts the method name from a line in Java Assembly file.
+        /// </summary>
+        /// <remarks>
+        /// This code is gross, but I'm out of coffee and only had a week.
+        /// </remarks>
+        /// <param name="line">The method declaration</param>
         public string GetMethodName(string line)
         {
             line = line.Trim().Split(';').First();
@@ -74,6 +91,10 @@ namespace ByteCodeMapper.Model
             return $"{this.classDefinition.Name}.{methodName}";
         }
 
+        /// <summary>
+        /// Finds a list of methods that are invoked by this method
+        /// </summary>
+        /// <returns>The distict list of names in standardized format</returns>
         public List<string> GetMethodsInvocations()
         {
             var list = new List<string>();
@@ -100,6 +121,9 @@ namespace ByteCodeMapper.Model
             return list.Distinct().ToList();
         }
 
+        /// <summary>
+        /// Gets a string representation for debugger.
+        /// </summary>
         public override string ToString()
         {
             return this.Name ?? "no name available.";

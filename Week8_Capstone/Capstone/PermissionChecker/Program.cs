@@ -1,12 +1,18 @@
 ﻿using Capstone.Model;
 using PermissionChecker.Extensions;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
 namespace PermissionChecker
 {
+    /// <summary>
+    /// Represents a utility for parsing AndroidManifest.xml files into a <see cref="GraphML"/> document.
+    /// 
+    /// 1. All files in a directory will be imported
+    /// 2. If the object is secured it will not be added to the graph
+    /// 3. By default only dangerous permissioned objects are imported <see cref="GraphMLExtensions.OnlyDangerousAPI"/> flag.
+    /// </summary>
     class Program
     {
         static readonly DirectoryInfo directory = new DirectoryInfo(@"s:\personal\apk-download\manifests");

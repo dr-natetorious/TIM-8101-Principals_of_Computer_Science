@@ -4,6 +4,9 @@ using System.Xml;
 
 namespace Capstone.Model
 {
+    /// <summary>
+    /// Represents the &lt;graph/&gt; element.
+    /// </summary>
     public class GraphNode
     {
         public string Id { get; set; }
@@ -16,6 +19,9 @@ namespace Capstone.Model
             undirected
         }
 
+        /// <summary>
+        /// The <see cref="Vertex"/> and <see cref="Edge"/> contained within the graph.
+        /// </summary>
         public List<GraphElement> Children { get; set; } = new List<GraphElement>();
 
         public void AppendXml(XmlElement rootNode)

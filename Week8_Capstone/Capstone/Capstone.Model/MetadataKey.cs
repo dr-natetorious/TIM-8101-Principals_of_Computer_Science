@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Capstone.Model
 {
+    /// <summary>
+    /// Represents a declared property of the <see cref="GraphML"/> document.
+    /// 
+    /// 1. These must be registered with the <see cref="GraphML.Keys"/>.
+    /// 2. Afterwards they can be referenced as <see cref="GraphElement.Labels"/>.
+    /// </summary>
     public class MetadataKey
     {
         public static MetadataKey CreateForNode(string name, string type= "string")

@@ -7,6 +7,9 @@ using System.Xml;
 
 namespace PermissionChecker.Extensions
 {
+    /// <summary>
+    /// Represents extension methods for generating graph state from AndroidManfiest.xml nodes.
+    /// </summary>
     public static class GraphMLExtensions
     {
         public static bool OnlyDangerousAPI { get; set; } = true;

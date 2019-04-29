@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
 
 namespace ReduceBucketListing
 {
+    /// <summary>
+    /// Represents a throw away utility for analyzing the massive results of 
+    /// 
+    ///     aws s3 ls --recursive s3://apk.natetorio.us/incoming
+    /// </summary>
     class Program
     {
         static void Main(string[] args)

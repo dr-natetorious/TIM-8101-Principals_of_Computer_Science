@@ -5,12 +5,14 @@ using System.IO;
 
 namespace ByteCodeMapper
 {
+    /// <summary>
+    /// A utility for converting Java Assembly files into GraphML documents
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
-            //// CreateTestGraph();
-
+            // Initialize the graphml document...
             var graphML = new GraphML();
             graphML.Keys.AddRange(new[]
             {
@@ -22,9 +24,11 @@ namespace ByteCodeMapper
 
             var mapper = new JavaMapper(graphML);
 
+            // Test a single class...
             var f = new FileInfo(@"S:\personal\apk-download\decompile\updated_bytecode2\org\smssecure\smssecure\jobs\SmsSendJob.java");
             var def = ClassDefinition.Read(f.OpenText());
 
+            // Import the assembly files recursively from a location...
             foreach (var file in new DirectoryInfo(
                 @"S:\personal\apk-download\decompile\updated_bytecode2\org\smssecure")
                 .GetFiles("*.java", SearchOption.AllDirectories))

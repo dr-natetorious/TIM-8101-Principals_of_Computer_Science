@@ -1,10 +1,12 @@
 ﻿using Capstone.Model;
 using System;
 using ByteCodeMapper.Model;
-using System.Linq;
 
 namespace ByteCodeMapper
 {
+    /// <summary>
+    /// Represents a dumb parser for Java Assembly files
+    /// </summary>
     public class JavaMapper
     {
         private readonly GraphML graphML;
@@ -15,8 +17,13 @@ namespace ByteCodeMapper
                 ?? throw new ArgumentNullException(nameof(graphML));
         }
 
+        /// <summary>
+        /// Appends the <paramref name="classDeclaration"/> to the <see cref="graphML"/> document.
+        /// </summary>
+        /// <param name="classDeclaration">The class to be imported.</param>
         public void Append(ClassDefinition classDeclaration)
         {
+            // Fetch the node if it already exists...
             var classNode = 
                 this.graphML.GetOrCreateVertex(
                     id: classDeclaration.Name,
@@ -27,6 +34,7 @@ namespace ByteCodeMapper
                             node_type = "class",
                         }));
 
+            // Add the relationship for inheritence...
             if (string.IsNullOrWhiteSpace(classDeclaration.Extends) == false)
             {
                 var extendsNode = 
@@ -46,6 +54,7 @@ namespace ByteCodeMapper
                     }));
             }
 
+            // Add any relationships for interface declarations...
             foreach (var implements in classDeclaration.Implements)
             {
                 var implementsNode =
@@ -65,16 +74,24 @@ namespace ByteCodeMapper
                     }));
             }
 
+            // Map any methods of this class...
             foreach (var method in classDeclaration.Methods)
             {
                 Append(classNode, method);
             }
         }
 
+        /// <summary>
+        /// Appends the <paramref name="method"/> to the <see cref="graphML"/> document.
+        /// </summary>
+        /// <param name="classNode">The declaring class.</param>
+        /// <param name="method">The method to be attached</param>
         private void Append(Vertex classNode, MethodDefinition method)
         {
+            // Get all the invocations...
             var invocations = method.GetMethodsInvocations();
 
+            // Add the method as a child of the classNode...
             var methodNode = 
                 this.graphML.GetOrCreateVertex(
                 id: method.Name,
@@ -97,6 +114,7 @@ namespace ByteCodeMapper
                         reference_type = "declared_by"
                     }));
 
+            // Add all invocations that this method will call...
             foreach (var invocation in invocations)
             {
                 var targetNode =

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Capstone.Model
 {
+    /// <summary>
+    /// Represents metadata to be attached to either a <see cref="Vertex"/> or <see cref="Edge"/>.
+    /// 
+    /// The <see cref="Key"/> needs to be registered in the <see cref="GraphML.Keys"/> to be used.
+    /// </summary>
     public sealed class GraphElementLabel
     {
         public string Key { get; set; }

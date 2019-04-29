@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 
 namespace Capstone.Model
 {
+    /// <summary>
+    /// Represents the base class for node and edge elements.
+    /// </summary>
     public abstract class GraphElement
     {
         public List<GraphElementLabel> Labels { get; set; } = new List<GraphElementLabel>();
