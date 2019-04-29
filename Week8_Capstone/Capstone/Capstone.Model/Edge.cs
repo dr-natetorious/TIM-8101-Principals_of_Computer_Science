@@ -16,13 +16,23 @@ namespace Capstone.Model
 
         public static Edge Create(Vertex source, Vertex target, object properties = null, string id = null)
         {
-            return new Edge
+            var edge = new Edge
             {
                 Id = id ?? "e_" + Guid.NewGuid().ToString("n"),
                 Source = source,
-                Target = target,
-                Labels = GraphElementLabel.CreateLabels(properties)
+                Target = target
             };
+
+            edge.Labels.AddRange(GraphElementLabel.CreateLabels(properties));
+            return edge;
+        }
+
+        public Edge()
+        {
+            this.Labels.AddRange(GraphElementLabel.CreateLabels(new
+            {
+                labelE = "edge"
+            }));
         }
 
         public override void AppendXml(XmlElement parentNode)

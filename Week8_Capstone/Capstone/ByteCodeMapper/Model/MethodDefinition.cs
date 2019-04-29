@@ -68,7 +68,7 @@ namespace ByteCodeMapper.Model
 #endif
             if (methodName == this.classDefinition.Name)
             {
-                methodName = ".ctr";
+                methodName = "ctr";
             }
 
             return $"{this.classDefinition.Name}.{methodName}";
@@ -85,7 +85,7 @@ namespace ByteCodeMapper.Model
                 }
 
                 var methodName = statement.Substring(statement.IndexOf("// Method ") + 10).Trim();
-                methodName = methodName.Replace("\"<init>\"", ".ctr");
+                methodName = methodName.Replace("\"<init>\"", "ctr");
                 methodName = methodName.Split(new[] { ':' }, 2)[0];
                 methodName = methodName.Replace("/", ".");
 
@@ -97,7 +97,12 @@ namespace ByteCodeMapper.Model
                 list.Add(methodName);
             }
 
-            return list;
+            return list.Distinct().ToList();
+        }
+
+        public override string ToString()
+        {
+            return this.Name ?? "no name available.";
         }
     }
 }

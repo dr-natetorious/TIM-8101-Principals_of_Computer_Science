@@ -9,11 +9,21 @@ namespace Capstone.Model
 
         public static Vertex Create(string id, object properties = null)
         {
-            return new Vertex
+            var vertex = new Vertex
             {
                 Id = id,
-                Labels = GraphElementLabel.CreateLabels(properties)
             };
+
+            vertex.Labels.AddRange(GraphElementLabel.CreateLabels(properties));
+            return vertex;
+        }
+
+        public Vertex()
+        {
+            this.Labels.AddRange(GraphElementLabel.CreateLabels(new
+            {
+                labelV = "vertex"
+            }));
         }
 
         public override void AppendXml(XmlElement parentNode)

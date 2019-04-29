@@ -8,7 +8,7 @@ namespace Capstone.Model
     {
         public string Id { get; set; }
 
-        public EdgeMode EdgeDefault { get; set; } = EdgeMode.undirected;
+        public EdgeMode EdgeDefault { get; set; } = EdgeMode.directed;
 
         public enum EdgeMode
         {
