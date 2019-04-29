@@ -2,7 +2,7 @@
 
 # Set globals here...
 apk_url=$1
-do_decompile= true
+do_decompile= $true
 apk_local=apk.zip
 
 
@@ -13,13 +13,6 @@ function header(){
   echo "=========================="
   echo  
 }
-
-if [ ! $do_decompile ];
-then
-  header "WARNING: DECOMPILE IS NOT ENABLED"
-  echo "Only soft extraction will be performed"
-  echo
-fi  
 
 # Make temporary directory for this
 header Creating temp path
@@ -67,8 +60,8 @@ cp apk/classes.dex .
 /usr/bin/dex2jar/d2j-dex2jar.sh -f -o classes.jar classes.dex
 
 # Crack open the classes.jar...
-if [ $do_decompile ];
-then
+#if [ $do_decompile ];
+#then
   header "Crack open the jar..."
   mkdir -p bytecode
   pushd bytecode
@@ -83,7 +76,7 @@ then
       javap -c -p $x > $outfile
     done
   popd
-fi
+#fi
 
 # Upload the content back to
 outdir=s3://apk.natetorio.us/`basename $apk_url`
