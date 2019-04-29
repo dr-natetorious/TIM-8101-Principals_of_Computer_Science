@@ -14,7 +14,7 @@ Some of the materials from the independent reading are cached here.
 
 - 13.13 out of 15 (B+)
 
-## Graded Feedback 
+## Graded Feedback
 
 Individual Feedback
 
@@ -57,4 +57,4 @@ Your assignments should demonstrate thoughtful consideration of the ideas and co
 
 Upload your files and click the Submit to Dropbox button.
 
-Very nice work on your poster. It was visually appealing while covering the required content for the assignment. While reading your paper, I noticed that you placed citations after almost every sentence in your writing. While citations are necessary, please keep a good balance between using them and providing the reader with your own original thoughts and ideas. Also, remember to proofread. I ran across a few typos and grammatical errors. 
+Very nice work on your poster. It was visually appealing while covering the required content for the assignment. While reading your paper, I noticed that you placed citations after almost every sentence in your writing. While citations are necessary, please keep a good balance between using them and providing the reader with your own original thoughts and ideas. Also, remember to proofread. I ran across a few typos and grammatical errors.

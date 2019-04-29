@@ -1,4 +1,6 @@
-# Which APKs have a public service and also dangerous permissions
+# Notes from Manifest exploration
+
+## Which APKs have a public service and also dangerous permissions
 
 gremlin> graph.traversal().V().has('node_type','enabled_permission').inE().outV().outE().inV().has('node_type','service').inE().outV().has('node_type','manifest').dedup()
 ==>v[_com.kanedias.vanilla.audiotag.apk_apk.zip.out_AndroidManifest.xml]
@@ -61,7 +63,7 @@ gremlin> graph.traversal().V().has('node_type','enabled_permission').inE().outV(
 ==>v[_com.money.manager.ex.apk_apk.zip.out_AndroidManifest.xml]
 ==>v[_com.orgzly.apk_apk.zip.out_AndroidManifest.xml]
 
-# Which APKs have a public receiver and also dangerous permissions
+## Which APKs have a public receiver and also dangerous permissions
 
 gremlin> graph.traversal().V().has('node_type','enabled_permission').inE().outV().outE().inV().has('node_type','receiver').inE().outV().has('node_type','manifest').dedup()
 ==>v[_ee.ioc.phon.android.speak.apk_apk.zip.out_AndroidManifest.xml]

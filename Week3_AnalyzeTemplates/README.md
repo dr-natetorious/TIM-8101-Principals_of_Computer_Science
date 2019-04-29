@@ -2,13 +2,13 @@
 
 This week has focused on trends in code generation and a brief refresher on C++.
 
-## What notes exist from this week?
+## What notes exist from this week
 
 - [Makefiles.md](Makefiles.md): Notes from setting up Make
 - [Templates.md](Templates.md): Notes from using C++ templates
 - [Pointers.md](Pointers.md): Notes from C pointer guide
 
-## What is the Core Assignment?
+## What is the Core Assignment
 
 This week, you read about sequence template classes. Your assignment for the week is to create a report on this useful class in which you will describe the following:
 
@@ -20,7 +20,7 @@ This week, you read about sequence template classes. Your assignment for the wee
 6. What research has been conducted using template classes? (1 page)
 7. What is some future research you can envision using template classes? (1 page)
 
-## How Do I Get Build Environment?
+## How Do I Get Build Environment
 
 The [devenv.bat](CppRefresher/devenv.bat) script will:
 

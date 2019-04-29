@@ -12,17 +12,17 @@ In this course, students will study how computer science concepts and theories c
 ## What are the sections of the class?
 
 - Section 1: Data Management
-   - [Week 1: Networking](Week1_Networking)
-   - [Week 2: Data and Databases](Week2_DataAnalysis)
+  - [Week 1: Networking](Week1_Networking)
+  - [Week 2: Data and Databases](Week2_DataAnalysis)
 
 - Section 2: Programming Concepts
-   - [Week 3: Algorithms and Data Structures](Week3_AnalyzeTemplates)
-   - [Week 4: Programming Languages](Week4_AnalyzeProgrammingLanguages)
-   - [Week 5: Software Methodology and Engineering](Week5_Conferences)
+  - [Week 3: Algorithms and Data Structures](Week3_AnalyzeTemplates)
+  - [Week 4: Programming Languages](Week4_AnalyzeProgrammingLanguage)
+  - [Week 5: Software Methodology and Engineering](Week5_Conferences)
 
 - Section 3: Artifical Intelligence and Computer Architecture
-   - Week 6: Artifical Intelligence
-   - Week 7: Architecture
+  - [Week 6: Artifical Intelligence](Week6_AIEthics)
+  - [Week 7: Architecture](Week7_Architecture)
 
 - Section 4: Signature Assignment
-   - Week 8: Analyze an Open Source Project
+  - [Week 8: Analyze an Open Source Project](Week8_Capstone)
