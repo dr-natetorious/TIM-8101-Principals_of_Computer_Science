@@ -6,7 +6,7 @@ The [International Conference on Software Engineering](http://www.icse-conferenc
 
 - The [2018 Keynote](https://www.youtube.com/watch?v=cpeMmMh7Syk) is available on Youtube.
 
-![ICSE_Tracks.png](ICE_Tracks.png)
+![ICSE_Tracks.png](ICSE_Tracks.png)
 
 ## What was the distribution of papers ?
 
